@@ -5,19 +5,20 @@
   src: url("./assets/fonts/LINESeedSans_W_Rg.woff");
 }
 
-:root{
+:root {
   --color-background: #010101;
   --color-bacground-light: #0f0f0f;
   --color-light: #fcfcfc;
   --color-primary: #f26622;
-  --color-primary-light: #F97316;
+  --color-primary-light: #f97316;
 
   /* font */
   --font-mono: "Line Seed sans", monospace;
   --font-serif: "Line Seed sans", serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -52,6 +53,14 @@ html, body {
   background: #555;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .bg-primary {
   background-color: var(--color-primary);
 }
@@ -63,7 +72,7 @@ html, body {
   background-color: var(--color-primary-light);
 }
 
-.border-primary{
+.border-primary {
   border-color: var(--color-primary-light);
 }
 /* using ring-primary in select, input, textArea */
@@ -97,6 +106,18 @@ html, body {
 
 .text-light {
   color: var(--color-light);
+}
+
+.clip {
+  position: relative;
+  clip-path: path(
+    "M 10,20 L 60,20 A 10,10 0,0,0 70,10 L 70,10 A 10,10 0,0,1 80,0 L 140,0 A 10,10 0,0,1 150,10 L 150,190 A 10,10 0,0,1 140,200 L 10,200 A 10,10 0,0,1 0,190 L 0,30 A 10,10 0,0,1 10,20 Z"
+  );
+  background-color: red;
+}
+
+.clip-feed-bg {
+  clip-path: path("M 10,20 L 60,20 A 10,10 0,0,0 70,10 L 70,10 A 10,10 0,0,1 80,0 L 140,0 A 10,10 0,0,1 150,10 L 150,190 A 10,10 0,0,1 140,200 L 10,200 A 10,10 0,0,1 0,190 L 0,30 A 10,10 0,0,1 10,20 Z");
 }
 
 @keyframes marquee {

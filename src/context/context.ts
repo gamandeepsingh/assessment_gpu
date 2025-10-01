@@ -8,6 +8,7 @@ export interface FeedPost {
   content: string;
   hashtags: string[];
   image?: string;
+  profileImage?: string;
   reactions: {
     likes: number;
     comments: number;

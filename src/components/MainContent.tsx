@@ -6,7 +6,7 @@ import GpuGrid from './GpuGrid';
 
 const MainContent: React.FC = () => {
   return (
-    <div className="flex-1 overflow-y-auto p-3 bg-background-light">
+    <div className="flex-1 overflow-y-auto p-3 bg-background-light hide-scrollbar">
       <Marquee />
       <Header />
       <StatsCards />

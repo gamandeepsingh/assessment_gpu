@@ -6,6 +6,10 @@ const Marquee: React.FC = () => {
     "nVidia RTX 6067 is now available in dApp",
     "Block Rate has been doubled now",
     "Earn 5000 Drops",
+    "5000 Drops with Astra Quest Now",
+    "nVidia RTX 6067 is now available in dApp",
+    "Block Rate has been doubled now",
+    "Earn 5000 Drops",
   ];
 
   return (

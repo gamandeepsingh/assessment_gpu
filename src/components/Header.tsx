@@ -151,6 +151,8 @@ const Header: React.FC = () => {
               <div className="text-3xl font-bold text-light">$0.43</div>
               <span className="h-28 w-1 absolute bottom-2 left-[140px] border-r-4 -translate-y-full border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute bottom-0 left-12 -translate-y-full border-r-4 border-dotted border-[#F97316]/60"></span>
+              <span className="h-16 w-1 absolute -bottom-3 left-[90px] -translate-y-full border-r-4 border-dotted border-[#F97316]/40"></span>
+              <span className="h-16 w-1 absolute bottom-14 left-[188px] -translate-y-full border-r-4 border-dotted border-[#F97316]/20"></span>
               <div className="w-60 mb-1 absolute bottom-0 left-0 z-0">
                 <img
                   src="/graph.png"
