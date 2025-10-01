@@ -12,9 +12,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     gpuType: '',
     storage: ''
   });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isFeedOpen, setIsFeedOpen] = useState(false);
 
   return (
-    <AppContext.Provider value={{ feedPosts, walletBalance, gpuListings, filters, setFilters }}>
+    <AppContext.Provider value={{ feedPosts, walletBalance, gpuListings, filters, setFilters, isSidebarOpen, setIsSidebarOpen, isFeedOpen, setIsFeedOpen }}>
       {children}
     </AppContext.Provider>
   );

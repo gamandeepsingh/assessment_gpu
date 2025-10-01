@@ -41,12 +41,12 @@ const RotatingWords: React.FC = () => {
     <div className="relative flex items-center">
       {/* Arrow fixed at vertical center */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2">
-        <ArrowRight className="w-10 h-10 text-white" strokeWidth={3} />
+        <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" strokeWidth={3} />
       </div>
 
       <div
         ref={containerRef}
-        className="ml-12 overflow-hidden"
+        className="ml-8 sm:ml-10 md:ml-12 overflow-hidden"
         style={{ height: 192 }}
       >
         <div
@@ -58,14 +58,14 @@ const RotatingWords: React.FC = () => {
           {words.map((w, i) => {
             const offset = i - index; // position relative to active word
             let tilt = "none";
-            if (offset < 0) tilt = "skewY(-6deg)";   // above
-            if (offset > 0) tilt = "skewY(6deg)";  // below
+            if (offset < 0) tilt = "skewY(-6deg)"; // above
+            if (offset > 0) tilt = "skewY(6deg)"; // below
 
             return (
               <div
                 key={w + i}
                 ref={i === 0 ? itemRef : undefined}
-                className="flex items-center text-3xl font-bold"
+                className="flex items-center text-xl sm:text-2xl md:text-3xl font-bold"
                 style={{
                   height: 48,
                   color: i === index ? "#ffffff" : "#f97316",

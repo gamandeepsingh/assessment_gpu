@@ -10,21 +10,41 @@ import laughEmoji from "../assets/emojis/laugh.png";
 import one from "/1.png";
 
 const Feed: React.FC = () => {
-  const { feedPosts } = useAppContext();
+  const { feedPosts, isFeedOpen, setIsFeedOpen } = useAppContext();
   const [newPost, setNewPost] = useState("");
 
   return (
-    <div className="relative w-[300px] h-screen flex flex-col bg-background-light pt-0.5">
+    <>
+      {/* Mobile Overlay */}
+      {isFeedOpen && (
+        <div
+          className="xl:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsFeedOpen(false)}
+        />
+      )}
+
+      {/* Feed */}
+      <div className={`${
+        isFeedOpen ? 'fixed right-0' : 'hidden'
+      } xl:flex relative w-[300px] h-screen overflow-y-auto flex-col bg-background-light pt-0.5 z-50 xl:static transition-transform duration-300 ease-in-out`}>
       {/* Curved Background */}
-      <div className="absolute inset-0 pt-0.5 z-0 pointer-events-none">
+      <div className="absolute inset-y-0 right-0 pt-0.5 z-0 pointer-events-none">
         <img
           src={one}
           alt="Background"
-          className="w-full h-full object-fit opacity-10 pt-4"
+          className="w-full max-w-[300px] h-full object-fit opacity-10 pt-4"
         />
       </div>
       {/* Header */}
       <div className="p-4 flex items-center justify-between relative z-10">
+        <button
+          onClick={() => setIsFeedOpen(false)}
+          className="absolute left-5 bg-black xl:hidden text-white hover:text-primary transition-colors p-2 -ml-2 rounded-full"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
         <div className="flex items-start justify-start gap-3">
           <ConnectButton.Custom>
             {({ account, openAccountModal, openConnectModal }) => (
@@ -180,7 +200,8 @@ const Feed: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -40,6 +40,10 @@ export interface AppContextType {
   gpuListings: GpuListing[];
   filters: Filters;
   setFilters: (filters: Filters) => void;
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: (isOpen: boolean) => void;
+  isFeedOpen: boolean;
+  setIsFeedOpen: (isOpen: boolean) => void;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);

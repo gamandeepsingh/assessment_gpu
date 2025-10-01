@@ -17,15 +17,15 @@ const GpuGrid: React.FC = () => {
   return (
     <div className="px-6 py-6">
       {/* Header with Filters */}
-      <div className="flex items-center justify-between mb-6 gap-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-2">
         <h2 className="text-sm font-bold text-light whitespace-nowrap">
           Latest added GPUs
         </h2>
         {/* divider */}
         <div className="w-full h-0.5 bg-gradient-to-r from-white/40 via-white/10 to-transparent rounded-full px-3 my-2"></div>
 
-        <div className="flex gap-3">
-          <div className="relative w-40">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
+          <div className="relative w-full sm:w-40">
             <select
               className="appearance-none bg-black border border-white/20 rounded-lg px-4 py-2 pr-8 text-sm text-light focus:text-white transition-colors cursor-pointer w-full"
               value={filters.location}
@@ -56,7 +56,7 @@ const GpuGrid: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative w-40">
+          <div className="relative w-full sm:w-40">
             <select
               className="appearance-none bg-black border border-white/20 rounded-lg px-4 py-2 pr-8 text-sm text-light focus:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-colors cursor-pointer w-full"
               value={filters.gpuType}
@@ -86,7 +86,7 @@ const GpuGrid: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative w-40">
+          <div className="relative w-full sm:w-40">
             <select
               className="appearance-none bg-black border border-white/20 rounded-lg px-4 py-2 pr-8 text-sm text-light focus:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-colors cursor-pointer w-full"
               value={filters.storage}
@@ -119,7 +119,7 @@ const GpuGrid: React.FC = () => {
       </div>
 
       {/* GPU Grid */}
-      <div className="grid grid-cols-3 2xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {filteredGpuListings.length === 0 ? (
           <div className="col-span-3 text-center py-12">
             <p className="text-gray-400 text-lg">No GPUs found matching your filters.</p>

@@ -14,7 +14,7 @@ import { useAppContext } from "../context";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Sidebar: React.FC = () => {
-  const { walletBalance } = useAppContext();
+  const { walletBalance, isSidebarOpen, setIsSidebarOpen } = useAppContext();
 
   const navItems = [
     { icon: Home, label: "dApp", active: true, badge: true },
@@ -26,10 +26,30 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-64 max-w-64 bg-black h-screen flex flex-col p-2">
-      {/* Logo */}
-      <div className="mb-8">
+    <>
+      {/* Mobile Overlay */}
+      {isSidebarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div className={`${
+        isSidebarOpen ? 'fixed' : 'hidden'
+      } lg:flex w-64 max-w-64 bg-black h-screen flex flex-col justify-between p-2 z-50 lg:static transition-transform duration-300 ease-in-out`}>
+      {/* Logo with Close button */}
+      <div className="mb-8 flex items-center justify-between">
         <img src="/full_logo.png" alt="GPU.NET" className="w-4/5 px-2" />
+        <button
+          onClick={() => setIsSidebarOpen(false)}
+          className="lg:hidden text-white hover:text-primary transition-colors p-2"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
 
       {/* Wallet Balance */}
@@ -153,7 +173,8 @@ const Sidebar: React.FC = () => {
         <span className="text-white/80">@2025 </span>
         <span className="text-white/30">All Right Reserved | GPU.NET</span>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

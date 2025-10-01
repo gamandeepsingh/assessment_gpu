@@ -5,47 +5,47 @@ import RotatingWords from "./RotatingWords";
 const Header: React.FC = () => {
 
   return (
-    <div className=" rounded-lg px-2 py-6 mt-3">
-      <div className="grid grid-cols-4 gap-2">
+    <div className="rounded-lg px-2 sm:px-4 py-4 sm:py-6 mt-2 sm:mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
         {/* Left Side - Animated Title */}
-        <div className="col-span-1 flex items-center gap-4">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 flex items-center gap-2 sm:gap-4">
           <RotatingWords/>
         </div>
 
         {/* Right Side - Stats Grid */}
-        <div className="col-span-3 flex items-start gap-2">
-          <div className="flex flex-col items-start gap-1">
-            <div className="flex items-center bg-gradient-to-br from-black via-black to-[#f26622]/50 rounded-lg">
+        <div className="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col lg:flex-row items-start gap-2 sm:gap-4">
+          <div className="col-span-2 flex flex-col items-start gap-1 w-fit">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-br from-black via-black to-[#f26622]/50 rounded-lg w-full overflow-x-auto">
               {/* Active Users */}
-              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
-                <Users className="w-8 h-8 text-primary" />
+              <div className="flex items-center gap-2 rounded-xl px-2 sm:px-3 py-3 sm:py-4 min-w-fit">
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     Active Users
                   </span>
-                  <div className="text-2xl font-bold text-light">705K</div>
+                  <div className="text-xl sm:text-2xl font-bold text-light">705K</div>
                 </div>
               </div>
 
               {/* Total Subnets */}
-              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
-                <Network className="w-8 h-8 text-primary" />
+              <div className="flex items-center gap-2 rounded-xl px-2 sm:px-3 py-3 sm:py-4">
+                <Network className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     Total Subnets
                   </span>
-                  <div className="text-2xl font-bold text-light">11K</div>
+                  <div className="text-xl sm:text-2xl font-bold text-light">11K</div>
                 </div>
               </div>
 
               {/* $GPU Distributed */}
-              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
-                <Coins className="w-8 h-8 text-primary" />
+              <div className="flex items-center gap-2 rounded-xl px-2 sm:px-3 py-3 sm:py-4">
+                <Coins className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     $GPU Distributed
                   </span>
-                  <div className="text-2xl font-bold text-light">1.1m</div>
+                  <div className="text-xl sm:text-2xl font-bold text-light">1.1m</div>
                 </div>
               </div>
             </div>
@@ -75,11 +75,11 @@ const Header: React.FC = () => {
                   />
                 </div>
               </div>
-              <span className=" text-light flex gap-1">
+              <span className="text-light flex flex-wrap gap-1 text-sm sm:text-base">
                 Join <span className="text-primary font-bold">11K+</span>{" "}
                 Subnets earning{" "}
                 <span className="text-primary font-normal underline flex items-center gap-1">
-                  400K $GPUs <MoveRight className="text-primary -rotate-45" />
+                  400K $GPUs <MoveRight className="text-primary -rotate-45 w-4 h-4 sm:w-5 sm:h-5" />
                 </span>
               </span>
             </div>
@@ -88,10 +88,10 @@ const Header: React.FC = () => {
             <div className="w-full h-0.5 bg-white/20 rounded-3xl px-3 my-2"></div>
 
             {/* Try Astra Section */}
-            <div className="mt-4 flex items-center justify-start gap-6 max-w-[90%]">
-              <button className="relative pr-6 py-3 flex flex-col items-start transition-all">
-                <span className="text-light font-bold text-lg">Try</span>
-                <span className="text-light font-bold text-2xl">Astra</span>
+            <div className="mt-2 sm:mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3 sm:gap-6 w-full">
+              <button className="relative pr-4 sm:pr-6 py-2 sm:py-3 flex flex-col items-start transition-all">
+                <span className="text-light font-bold text-base sm:text-lg">Try</span>
+                <span className="text-light font-bold text-xl sm:text-2xl">Astra</span>
                 <span className="absolute right-0 top-1/2 h-8 w-[1.5px] bg-white/30 -translate-y-1/2"></span>
               </button>
               <p className="w-full flex-1 text-white/40 text-sm">
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* $GPU Price with Chart */}
-          <div className="col-span-1 w-full h-full bg-gradient-to-br from-[#f26622]/50 via-black to-black rounded-lg flex flex-col items-start gap-1 px-3 py-4 relative overflow-hidden">
+          <div className="w-full h-full bg-gradient-to-br from-[#f26622]/50 via-black to-black rounded-lg flex flex-col items-start gap-1 px-3 py-4 relative overflow-hidden min-h-[160px] sm:min-h-[200px]">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 border border-white/20 py-1 px-2 rounded-full">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
               <span className="text-white text-xs font-bold">$GPU Price</span>
             </div>
             <div className="flex items-end gap-3">
-              <div className="text-3xl font-bold text-light">$0.43</div>
+              <div className="text-2xl sm:text-3xl font-bold text-light">$0.43</div>
               <span className="h-28 w-1 absolute bottom-2 left-[140px] border-r-4 -translate-y-full border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute bottom-0 left-12 -translate-y-full border-r-4 border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute -bottom-3 left-[90px] -translate-y-full border-r-4 border-dotted border-[#F97316]/40"></span>
