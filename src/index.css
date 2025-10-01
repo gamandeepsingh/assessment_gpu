@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Doto:wght@100..900&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Line Seed sans";
+  src: url("./assets/fonts/LINESeedSans_W_Rg.woff");
+}
 
 :root{
   --color-background: #010101;
+  --color-bacground-light: #0f0f0f;
   --color-light: #fcfcfc;
   --color-primary: #f26622;
+  --color-primary-light: #F97316;
 
   /* font */
-  --font-mono: 'DM Mono', monospace;
-  --font-serif: 'Doto', serif;
+  --font-mono: "Line Seed sans", monospace;
+  --font-serif: "Line Seed sans", serif;
 }
 
 html, body {
@@ -23,12 +29,50 @@ html, body {
   color: var(--color-light);
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #000;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .bg-primary {
   background-color: var(--color-primary);
 }
 
 .text-primary {
   color: var(--color-primary);
+}
+.bg-primary {
+  background-color: var(--color-primary-light);
+}
+
+.border-primary{
+  border-color: var(--color-primary-light);
+}
+/* using ring-primary in select, input, textArea */
+.ring-primary {
+  --tw-ring-color: var(--color-primary-light);
+}
+
+.text-primary {
+  color: var(--color-primary-light);
 }
 
 .bg-background {
@@ -39,10 +83,31 @@ html, body {
   color: var(--color-background);
 }
 
+.bg-background-light {
+  background-color: var(--color-bacground-light);
+}
+
+.text-background-light {
+  color: var(--color-bacground-light);
+}
+
 .bg-light {
   background-color: var(--color-light);
 }
 
 .text-light {
   color: var(--color-light);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
