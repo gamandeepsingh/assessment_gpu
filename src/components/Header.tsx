@@ -1,47 +1,15 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { Users, Network, Coins, ArrowRight, MoveRight } from "lucide-react";
+import React from "react";
+import { Users, Network, Coins, MoveRight } from "lucide-react";
+import RotatingWords from "./RotatingWords";
 
 const Header: React.FC = () => {
-  const rotatingWords = useMemo(
-    () => ["All in", "One", "GPU", "Ecosystem", "Super"],
-    []
-  );
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length);
-        setIsAnimating(false);
-      }, 300);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [rotatingWords]);
 
   return (
-    <div className=" rounded-lg px-6 py-6 mt-3">
+    <div className=" rounded-lg px-2 py-6 mt-3">
       <div className="grid grid-cols-4 gap-2">
         {/* Left Side - Animated Title */}
         <div className="col-span-1 flex items-center gap-4">
-          <ArrowRight className="w-12 h-12 text-light mt-2" strokeWidth={3} />
-          <div className="relative h-full overflow-hidden flex flex-col justify-center">
-            <div
-              className={`transition-transform duration-300 ease-in-out ${
-                isAnimating
-                  ? "-translate-y-full opacity-0"
-                  : "translate-y-0 opacity-100"
-              }`}
-            >
-              <h1 className="text-3xl font-bold leading-tight">
-                <span className="text-primary">
-                  {rotatingWords[currentWordIndex]}
-                </span>
-              </h1>
-            </div>
-          </div>
+          <RotatingWords/>
         </div>
 
         {/* Right Side - Stats Grid */}
