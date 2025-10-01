@@ -35,7 +35,7 @@ const Header: React.FC = () => {
                   : "translate-y-0 opacity-100"
               }`}
             >
-              <h1 className="text-5xl font-bold leading-tight">
+              <h1 className="text-3xl font-bold leading-tight">
                 <span className="text-primary">
                   {rotatingWords[currentWordIndex]}
                 </span>
@@ -47,37 +47,37 @@ const Header: React.FC = () => {
         {/* Right Side - Stats Grid */}
         <div className="col-span-3 flex items-start gap-2">
           <div className="flex flex-col items-start gap-1">
-            <div className="flex items-center gap-1 bg-gradient-to-br from-black via-black to-[#f26622]/50 rounded-lg">
+            <div className="flex items-center bg-gradient-to-br from-black via-black to-[#f26622]/50 rounded-lg">
               {/* Active Users */}
-              <div className="flex items-center gap-3 rounded-xl px-3 py-4">
+              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
                 <Users className="w-8 h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     Active Users
                   </span>
-                  <div className="text-3xl font-bold text-light">705K</div>
+                  <div className="text-2xl font-bold text-light">705K</div>
                 </div>
               </div>
 
               {/* Total Subnets */}
-              <div className="flex items-center gap-3 rounded-xl px-3 py-4">
+              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
                 <Network className="w-8 h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     Total Subnets
                   </span>
-                  <div className="text-3xl font-bold text-light">11K</div>
+                  <div className="text-2xl font-bold text-light">11K</div>
                 </div>
               </div>
 
               {/* $GPU Distributed */}
-              <div className="flex items-center gap-3 rounded-xl px-3 py-4">
+              <div className="flex items-center gap-2 rounded-xl px-3 py-4">
                 <Coins className="w-8 h-8 text-primary" />
                 <div className="flex flex-col items-start gap-2 mb-2">
                   <span className="text-white/70 text-xs whitespace-nowrap">
                     $GPU Distributed
                   </span>
-                  <div className="text-3xl font-bold text-light">1.1m</div>
+                  <div className="text-2xl font-bold text-light">1.1m</div>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                   />
                 </div>
               </div>
-              <span className="text-lg text-light flex gap-1">
+              <span className=" text-light flex gap-1">
                 Join <span className="text-primary font-bold">11K+</span>{" "}
                 Subnets earning{" "}
                 <span className="text-primary font-normal underline flex items-center gap-1">
@@ -149,7 +149,7 @@ const Header: React.FC = () => {
             </div>
             <div className="flex items-end gap-3">
               <div className="text-3xl font-bold text-light">$0.43</div>
-              <span className="h-28 w-1 absolute bottom-2 right-18 border-r-4 -translate-y-full border-dotted border-[#F97316]/60"></span>
+              <span className="h-28 w-1 absolute bottom-2 left-[140px] border-r-4 -translate-y-full border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute bottom-0 left-12 -translate-y-full border-r-4 border-dotted border-[#F97316]/60"></span>
               <div className="w-60 mb-1 absolute bottom-0 left-0 z-0">
                 <img

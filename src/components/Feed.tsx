@@ -8,7 +8,7 @@ const Feed: React.FC = () => {
   const [newPost, setNewPost] = useState('');
 
   return (
-    <div className="w-96 bg-black border-l border-gray-800 h-screen flex flex-col">
+    <div className="w-[300px] bg-black border-l border-gray-800 h-screen flex flex-col">
       {/* Header */}
       <div className="p-4 border-b border-gray-800 flex items-center justify-between">
         <div className="flex items-center gap-3">

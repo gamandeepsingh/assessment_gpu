@@ -9,10 +9,10 @@ const Marquee: React.FC = () => {
   ];
 
   return (
-    <div className="relative bg-black overflow-hidden py-2 rounded-lg">
+    <div className="relative bg-black overflow-hidden py-3 rounded-lg">
       <div className="animate-marquee whitespace-nowrap flex gap-8">
         {[...announcements, ...announcements].map((text, i) => (
-          <span key={i} className="text-light font-[600] text-sm inline-block px-4">
+          <span key={i} className="text-light font-[600] text-xs inline-block px-4">
             {text}
           </span>
         ))}

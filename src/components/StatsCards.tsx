@@ -17,13 +17,13 @@ const StatsCards: React.FC = () => {
         {stats.map((stat, index) => (
           <div key={stat.country} className="rounded-lg p-4 relative">
             <div
-              className={`mb-1 font-bold ${
+              className={`mb-1 font-bold whitespace-nowrap ${
                 index === 0 ? "text-light text-sm" : "text-white/60 text-xs"
               }`}
             >
               {stat.country}
             </div>
-            <div className="text-2xl font-bold text-light">
+            <div className="text-xl font-bold text-light">
               {stat.gpus === 0 ? (
                 <span className="flex items-center gap-1">
                   4,254{" "}

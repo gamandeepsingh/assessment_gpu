@@ -4,7 +4,6 @@ import {
   Trophy,
   Search,
   LineChart,
-  CirclePoundSterlingIcon,
   Plus,
   MessageCircle,
   Captions,
@@ -28,20 +27,22 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-64 bg-black h-screen flex flex-col p-4">
+    <div className="w-64 max-w-64 bg-black h-screen flex flex-col p-2">
       {/* Logo */}
       <div className="mb-8">
-        <img src="/full_logo.png" alt="GPU.NET" className="w-9/12 mx-auto" />
+        <img src="/full_logo.png" alt="GPU.NET" className="w-4/5 px-2" />
       </div>
 
       {/* Wallet Balance */}
-      <div className="bg-white/5 rounded-lg p-4 mb-6 flex items-center justify-between">
+      <div className="bg-white/5 rounded-lg px-4 py-2 mb-6 flex items-center justify-between">
         <div className="flex flex-col justify-center items-center">
           <div className="text-gray-50/50 font-medium text-sm mb-2">
             Wallet Balance
           </div>
           <div className="flex items-center gap-2">
-            <CirclePoundSterlingIcon className="w-6 h-6 text-gray-50/50" />
+            <div className="bg-white text-black rounded-full flex items-center justify-center w-5 h-5 text-sm">
+              G
+            </div>
             <span className="text-xl font-bold text-light">
               {walletBalance}
               <span className="text-sm font-medium mt-1 text-white/50 ml-1">
@@ -67,7 +68,7 @@ const Sidebar: React.FC = () => {
         {navItems.map((item) => (
           <button
             key={item.label}
-            className={`flex flex-col items-start gap-3 px-4 py-3 rounded-lg transition-colors  cursor-pointer  hover:bg-white/10  ${
+            className={`flex flex-col items-start gap-3 px-4 py-2 rounded-lg transition-colors  cursor-pointer  hover:bg-white/10  ${
               item.active ? "text-light" : "text-gray-400"
             }`}
           >
@@ -82,17 +83,17 @@ const Sidebar: React.FC = () => {
                 />
               }
               <item.icon className="w-5 h-5" />
-              <span className="font-bold">{item.label}</span>
+              <span className="text-sm font-bold">{item.label}</span>
             </span>
             {item.label === "dApp" && (
               <span className="flex flex-col items-start mb-2">
-                <span className="text-sm font-medium hover:text-white text-white/50">
+                <span className="text-xs font-medium hover:text-white text-white/50">
                   Provide GPUs
                 </span>
-                <span className="text-sm font-medium hover:text-white mt-1 text-white/50">
+                <span className="text-xs font-medium hover:text-white mt-1 text-white/50">
                   Get Credits
                 </span>
-                <span className="text-sm font-medium hover:text-white mt-1 text-white/50">
+                <span className="text-xs font-medium hover:text-white mt-1 text-white/50">
                   Profile
                 </span>
               </span>
