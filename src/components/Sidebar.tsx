@@ -4,7 +4,6 @@ import {
   Trophy,
   Search,
   LineChart,
-  Plus,
   MessageCircle,
   Captions,
   Send,
@@ -52,12 +51,12 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
         <ConnectButton.Custom>
-          {({ openConnectModal }) => (
+          {({ account, openAccountModal, openConnectModal }) => (
             <button
-              onClick={openConnectModal}
-              className="bg-light text-background rounded-full hover:bg-gray-200 p-3.5 cursor-pointer active:scale-90 transition-all duration-200 ease-in-out"
+              onClick={account ? openAccountModal : openConnectModal}
+              className="bg-light text-background rounded-full hover:bg-gray-200 p-3.5 cursor-pointer active:scale-90 transition-all duration-200 ease-in-out w-8 h-8 flex justify-center items-center font-bold"
             >
-              <Plus className="w-3 h-3 font-bold" />
+              +
             </button>
           )}
         </ConnectButton.Custom>

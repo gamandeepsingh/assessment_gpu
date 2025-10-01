@@ -12,7 +12,6 @@ export interface FeedPost {
   reactions: {
     likes: number;
     comments: number;
-    votes: string;
   };
   views: string;
 }
