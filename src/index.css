@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Doto:wght@100..900&display=swap');
+@import "tailwindcss";
+
+:root{
+  --color-background: #010101;
+  --color-light: #fcfcfc;
+  --color-primary: #f26622;
+
+  /* font */
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Doto', serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  background-color: var(--color-background);
+  color: var(--color-light);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.text-background {
+  color: var(--color-background);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.text-light {
+  color: var(--color-light);
+}
