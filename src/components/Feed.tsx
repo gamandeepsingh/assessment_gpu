@@ -32,7 +32,7 @@ const Feed: React.FC = () => {
                 onClick={
                   account ? openAccountModal : openConnectModal
                 }
-                className="flex items-center gap-2 bg-black px-2 py-1 rounded-sm border border-white/20"
+                className="flex items-center gap-2 bg-black px-2 py-1 rounded-sm border border-white/20 cursor-pointer"
               >
                 {account && (
                   <img
@@ -41,7 +41,7 @@ const Feed: React.FC = () => {
                     className="w-5 h-5 rounded-full object-cover"
                   />
                 )}
-                <div className="text-xs font-bold text-light">
+                <div className="text-xs font-bold text-light cursor-pointer">
                   {account ? "Profile" : "Connect Wallet"}
                 </div>
                 {account && (
