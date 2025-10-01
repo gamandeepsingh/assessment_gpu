@@ -48,14 +48,93 @@ export const mockFeedPosts: FeedPost[] = [
   }
 ];
 
-export const mockGpuListings: GpuListing[] = Array(8).fill(null).map(() => ({
-  id: '#124852',
-  name: 'H100 PCIe',
-  cpu: 'AMD EPYC™ 9654',
-  gpuRam: '80 GB',
-  vram: '4 GB',
-  cpuRam: '64 GB',
-  storageType: 'nvme',
-  price: '$0.45/ Per Hour',
-  location: 'United States'
-}));
+export const mockGpuListings: GpuListing[] = [
+  {
+    id: '#124852',
+    name: 'H100 PCIe',
+    cpu: 'AMD EPYC™ 9654',
+    gpuRam: '80 GB',
+    vram: '4 GB',
+    cpuRam: '64 GB',
+    storageType: 'nvme',
+    price: '$0.45/ Per Hour',
+    location: 'us'
+  },
+  {
+    id: '#124853',
+    name: 'A100',
+    cpu: 'Intel Xeon 8375C',
+    gpuRam: '40 GB',
+    vram: '8 GB',
+    cpuRam: '128 GB',
+    storageType: 'ssd',
+    price: '$0.35/ Per Hour',
+    location: 'uk'
+  },
+  {
+    id: '#124854',
+    name: 'RTX 6000',
+    cpu: 'AMD EPYC™ 7763',
+    gpuRam: '24 GB',
+    vram: '16 GB',
+    cpuRam: '256 GB',
+    storageType: 'nvme',
+    price: '$0.28/ Per Hour',
+    location: 'uae'
+  },
+  {
+    id: '#124855',
+    name: 'H100 PCIe',
+    cpu: 'Intel Xeon 8480+',
+    gpuRam: '80 GB',
+    vram: '4 GB',
+    cpuRam: '64 GB',
+    storageType: 'hdd',
+    price: '$0.42/ Per Hour',
+    location: 'us'
+  },
+  {
+    id: '#124856',
+    name: 'A100',
+    cpu: 'AMD EPYC™ 9654',
+    gpuRam: '40 GB',
+    vram: '8 GB',
+    cpuRam: '128 GB',
+    storageType: 'nvme',
+    price: '$0.38/ Per Hour',
+    location: 'uk'
+  },
+  {
+    id: '#124857',
+    name: 'RTX 6000',
+    cpu: 'Intel Xeon 8375C',
+    gpuRam: '24 GB',
+    vram: '12 GB',
+    cpuRam: '192 GB',
+    storageType: 'ssd',
+    price: '$0.25/ Per Hour',
+    location: 'us'
+  },
+  {
+    id: '#124858',
+    name: 'H100 PCIe',
+    cpu: 'AMD EPYC™ 9654',
+    gpuRam: '80 GB',
+    vram: '4 GB',
+    cpuRam: '64 GB',
+    storageType: 'nvme',
+    price: '$0.47/ Per Hour',
+    location: 'uae'
+  },
+  {
+    id: '#124859',
+    name: 'A100',
+    cpu: 'AMD EPYC™ 7763',
+    gpuRam: '40 GB',
+    vram: '8 GB',
+    cpuRam: '128 GB',
+    storageType: 'hdd',
+    price: '$0.32/ Per Hour',
+    location: 'uk'
+  }
+];

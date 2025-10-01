@@ -1,9 +1,18 @@
 import React from "react";
-import { CirclePoundSterling, Cpu } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { useAppContext } from "../context";
 
 const GpuGrid: React.FC = () => {
   const { gpuListings, filters, setFilters } = useAppContext();
+
+  // Filter the GPU listings based on selected filters
+  const filteredGpuListings = gpuListings.filter((gpu) => {
+    const matchesLocation = !filters.location || gpu.location === filters.location;
+    const matchesGpuType = !filters.gpuType || gpu.name.toLowerCase().includes(filters.gpuType);
+    const matchesStorage = !filters.storage || gpu.storageType.toLowerCase() === filters.storage.toLowerCase();
+    
+    return matchesLocation && matchesGpuType && matchesStorage;
+  });
 
   return (
     <div className="px-6 py-6">
@@ -111,7 +120,18 @@ const GpuGrid: React.FC = () => {
 
       {/* GPU Grid */}
       <div className="grid grid-cols-3 2xl:grid-cols-3 gap-4">
-        {gpuListings.map((gpu, index) => (
+        {filteredGpuListings.length === 0 ? (
+          <div className="col-span-3 text-center py-12">
+            <p className="text-gray-400 text-lg">No GPUs found matching your filters.</p>
+            <button 
+              onClick={() => setFilters({ location: '', gpuType: '', storage: '' })}
+              className="mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors cursor-pointer"
+            >
+              Clear Filters
+            </button>
+          </div>
+        ) : (
+          filteredGpuListings.map((gpu, index) => (
           <div
             key={index}
             className="p-[1px] rounded-xl bg-gradient-to-b from-white/30 to-white/10"
@@ -172,17 +192,18 @@ const GpuGrid: React.FC = () => {
 
               {/* Price */}
               <div className="flex items-center gap-2 mb-4">
-                <CirclePoundSterling className="w-4 h-4 text-gray-400" />
-                <span className="text-light font-bold">{gpu.price}</span>
+                <span className="w-5 h-5 bg-light rounded-full font-bold text-sm text-black flex justify-center items-center">$</span>
+                <span className="text-white/70 text-sm">{gpu.price}</span>
               </div>
 
               {/* Rent Button */}
-              <button className="w-fit px-8 py-2 text-xs bg-light hover:bg-gray-200 text-background font-bold rounded-lg transition-colors cursor-pointer active:scale-90 transition-all duration-500 ease-in-out">
+              <button className="w-fit px-8 py-2 text-xs bg-light hover:bg-gray-200 text-background font-bold rounded-lg cursor-pointer active:scale-90 transition-all duration-500 ease-in-out">
                 Rent Now
               </button>
             </div>
           </div>
-        ))}
+        ))
+        )}
       </div>
     </div>
   );
