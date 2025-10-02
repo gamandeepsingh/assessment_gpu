@@ -5,7 +5,6 @@ import { useAppContext } from "../context";
 const GpuGrid: React.FC = () => {
   const { gpuListings, filters, setFilters } = useAppContext();
 
-  // Filter the GPU listings based on selected filters
   const filteredGpuListings = gpuListings.filter((gpu) => {
     const matchesLocation = !filters.location || gpu.location === filters.location;
     const matchesGpuType = !filters.gpuType || gpu.name.toLowerCase().includes(filters.gpuType);

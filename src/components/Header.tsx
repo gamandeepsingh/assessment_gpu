@@ -106,7 +106,7 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* $GPU Price with Chart */}
+          {/* $GPU Price with Chart Image */}
           <div className="col-span-1 w-full h-full bg-gradient-to-br from-[#f26622]/50 via-black to-black rounded-lg flex flex-col items-start gap-1 px-3 py-4 relative overflow-hidden min-h-[200px] sm:min-h-[200px]">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 border border-white/20 py-1 px-2 rounded-full">
