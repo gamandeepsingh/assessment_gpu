@@ -5,7 +5,7 @@ A modern GPU marketplace application built with React, TailwindCSS v4, RainbowKi
 ![GPU.NET](public/logo_with_name.svg)
 
 ## Live Demo
-Check out the live demo at [https://gpu.net](https://gpu.net)
+Check out the live demo at [https://assement-gpu.vercel.app/](https://assement-gpu.vercel.app/)
 
 ## Features
 

@@ -62,14 +62,14 @@ const Header: React.FC = () => {
                 </div>
                 <div className="w-8 h-8 rounded-full">
                   <img
-                    src="https://media.istockphoto.com/id/1335941248/photo/shot-of-a-handsome-young-man-standing-against-a-grey-background.jpg?s=612x612&w=0&k=20&c=JSBpwVFm8vz23PZ44Rjn728NwmMtBa_DYL7qxrEWr38="
+                    src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww"
                     alt="avatar"
                     className="rounded-full h-full w-full object-cover"
                   />
                 </div>
                 <div className="w-8 h-8 rounded-full">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0pQJAwqGzgbLm_UzMY1OaUkTciysLCZJNjg&s"
+                    src="https://media.istockphoto.com/id/544350498/photo/carefree-man.jpg?s=612x612&w=0&k=20&c=lssOyvwjWKkNJmoxaYbLOynsmVA_IHMfhf2JiF746e0="
                     alt="avatar"
                     className="rounded-full h-full w-full object-cover"
                   />

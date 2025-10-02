@@ -20,6 +20,8 @@ const NewPostInput: React.FC<NewPostInputProps> = ({ value, onChange }) => {
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0pQJAwqGzgbLm_UzMY1OaUkTciysLCZJNjg&s"
           alt="Profile"
+          loading="lazy"
+          decoding="async"
           className="absolute left-2 top-5 transform -translate-y-1/2 w-7 h-7 rounded-full object-cover"
         />
         <Image className="absolute bottom-2 left-2 w-4 h-4 text-white/70 cursor-pointer" />

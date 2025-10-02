@@ -23,6 +23,8 @@ const RegularPost: React.FC<RegularPostProps> = ({ post }) => {
           <img
             src={post.profileImage || "https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg"}
             alt="Profile"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full rounded-full object-cover"
           />
         </div>
@@ -57,7 +59,7 @@ const RegularPost: React.FC<RegularPostProps> = ({ post }) => {
 
       {/* Post Image */}
       {post.image && (
-        <img src={post.image} alt="Post" className="w-full rounded-lg mb-3 object-cover" />
+        <img src={post.image} alt="Post" loading="lazy" decoding="async" className="w-full rounded-lg mb-3 object-cover" />
       )}
 
       {/* Reactions */}

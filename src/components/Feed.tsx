@@ -42,6 +42,8 @@ const Feed: React.FC = () => {
           <img
             src={one}
             alt="Background"
+            loading="lazy"
+            decoding="async"
             className="w-full max-w-[300px] h-full object-fit opacity-10 pt-4 pointer-events-none"
           />
         </div>

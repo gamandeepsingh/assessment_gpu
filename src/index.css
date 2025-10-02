@@ -3,6 +3,7 @@
 @font-face {
   font-family: "Line Seed sans";
   src: url("./assets/fonts/LINESeedSans_W_Rg.woff");
+  font-display: swap;
 }
 
 :root {
