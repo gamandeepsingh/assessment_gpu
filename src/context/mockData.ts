@@ -37,7 +37,7 @@ export const mockFeedPosts: FeedPost[] = [
     profileImage:"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww",
     content: '',
     hashtags: [],
-        image:"https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg",
+    image:"https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg",
     reactions: { likes: 6, comments: 140 },
     views: '31K',
     postType: 'regular'
@@ -64,6 +64,7 @@ export const mockFeedPosts: FeedPost[] = [
     role: 'Senior developer | Boston University',
     profileImage:"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww",
     timestamp: '8h ago',
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFglw4q4cKnNUhiWHI9vG7EmQy3m4pyigiXQ&s",
     content: 'Just conquered algorithms & data structures! 🎯\nTime for a breather. Suggestions for a binge-worthy show? 🍿',
     hashtags: ['#StudyBreak', '#NetflixTime'],
     reactions: { likes: 63, comments: 300 },

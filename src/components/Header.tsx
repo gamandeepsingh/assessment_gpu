@@ -75,7 +75,7 @@ const Header: React.FC = () => {
                   />
                 </div>
               </div>
-              <p className="text-light flex flex-wrap gap-1 text-[10px]">
+              <p className="text-light flex flex-wrap gap-1 text-[10px] 2xl:text-sm">
                 Join <span className="text-primary font-bold">11K+</span>{" "}
                 Subnets earning{" "}
                 <span className="text-primary font-normal underline flex items-center gap-1">

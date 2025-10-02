@@ -119,7 +119,7 @@ const GpuGrid: React.FC = () => {
       </div>
 
       {/* GPU Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
         {filteredGpuListings.length === 0 ? (
           <div className="col-span-3 text-center py-12">
             <p className="text-gray-400 text-lg">No GPUs found matching your filters.</p>
@@ -139,23 +139,23 @@ const GpuGrid: React.FC = () => {
             <div className="bg-black rounded-xl p-4 hover:border-primary transition-colors">
               {/* Header */}
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-light">{gpu.name}</h3>
+                <h3 className="text-base font-bold text-light">{gpu.name}</h3>
               </div>
-              <p className="text-xs text-white/70 my-3">{gpu.id}</p>
+              <p className="text-[10px] text-white/70 my-3">{gpu.id}</p>
 
               {/* Badges */}
-              <div className="flex gap-1 mb-4">
-                <span className="bg-primary/20px-2 text-light font-bold py-1 rounded text-xs flex items-center gap-1">
-                  <Cpu className="w-5 h-5 text-primary-light" color="#F97316" />
+              <div className="flex gap-0 items-center mb-4">
+                <span className="bg-primary/20px-2 text-light font-bold py-1 rounded text-[10px] flex items-center gap-1">
+                  <Cpu className="w-4 h-4 text-primary-light" color="#F97316" />
                   AMD
                 </span>
-                <span className="bg-primary/20 font-bold text-light px-2 py-1 rounded text-xs">
+                <span className="bg-primary/20 font-bold text-light px-2 py-1 rounded text-[10px] whitespace-nowrap">
                   {gpu.cpu}
                 </span>
               </div>
 
               {/* Specs Grid */}
-              <div className="space-y-2 mb-4 text-xs font-bold">
+              <div className="space-y-2 mb-4 text-[10px] ">
                 <div className="flex justify-between">
                   <span className="text-white/70">Storage Type</span>
                   <span className="text-light">{gpu.storageType}</span>
@@ -183,7 +183,7 @@ const GpuGrid: React.FC = () => {
                       qty === "x2"
                         ? "bg-white text-black"
                         : "bg-white/20 text-white"
-                    } rounded-xl p-2 text-xs font-bold transition-colors border border-white/40`}
+                    } rounded-xl p-2 text-[10px] font-bold transition-colors border border-white/40`}
                   >
                     {qty}
                   </button>
@@ -192,8 +192,8 @@ const GpuGrid: React.FC = () => {
 
               {/* Price */}
               <div className="flex items-center gap-2 mb-4">
-                <span className="w-5 h-5 bg-light rounded-full font-bold text-sm text-black flex justify-center items-center">$</span>
-                <span className="text-white/70 text-sm">{gpu.price}</span>
+                <span className="w-4 h-4 bg-light rounded-full font-bold text-sm text-black flex justify-center items-center">$</span>
+                <span className="text-white/70 text-xs">{gpu.price}</span>
               </div>
 
               {/* Rent Button */}

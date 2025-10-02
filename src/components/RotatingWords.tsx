@@ -38,7 +38,7 @@ const RotatingWords: React.FC = () => {
   }, [index]);
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center h-full">
       {/* Arrow fixed at vertical center */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2">
         <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" strokeWidth={3} />
@@ -75,6 +75,7 @@ const RotatingWords: React.FC = () => {
                   color: i === index ? "#ffffff" : "#f97316",
                   opacity: i === index ? 1 : 0.6,
                   filter: i === index ? "none" : "blur(0.8px)",
+                  fontSize: i === index ? "2rem" : "1.4rem",
                   transform: tilt,
                   transition:
                     "color 300ms, opacity 300ms, filter 300ms, transform 300ms",
