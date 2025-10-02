@@ -15,7 +15,7 @@ const StatsCards: React.FC = () => {
     <div className="bg-black rounded-xl p-2">
       <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto hide-scrollbar">
         {stats.map((stat, index) => (
-          <div key={stat.country} className="rounded-lg p-2 sm:p-4 relative min-w-[200px]">
+          <div key={stat.country} className="rounded-lg p-2 sm:p-4 relative  min-w-[200px] md:min-w-fit">
             <div
               className={`mb-1 font-bold sm:whitespace-nowrap ${
                 index === 0 ? "text-light text-sm" : "text-white/60 text-xs"

@@ -46,9 +46,13 @@ const RotatingWords: React.FC = () => {
 
       <div
         ref={containerRef}
-        className="ml-8 sm:ml-10 md:ml-12 overflow-hidden"
+        className="ml-8 sm:ml-10 md:ml-12 overflow-hidden relative"
         style={{ height: 192 }}
       >
+        {/* Fade overlays */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 w-full h-8 bg-gradient-to-t from-transparent  to-[#0f0f0f] z-10" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 w-full h-8 bg-gradient-to-b from-transparent to-[#0f0f0f] z-10" />
+
         <div
           style={{
             transform: `translateY(${translateY}px)`,
@@ -69,7 +73,7 @@ const RotatingWords: React.FC = () => {
                 style={{
                   height: 48,
                   color: i === index ? "#ffffff" : "#f97316",
-                  opacity: i === index ? 1 : 0.5,
+                  opacity: i === index ? 1 : 0.6,
                   filter: i === index ? "none" : "blur(0.8px)",
                   transform: tilt,
                   transition:

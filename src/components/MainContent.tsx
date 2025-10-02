@@ -10,7 +10,7 @@ const MainContent: React.FC = () => {
   const { setIsSidebarOpen, setIsFeedOpen } = useAppContext();
 
   return (
-    <div className="flex-1 overflow-y-auto p-2 sm:p-3 bg-background-light hide-scrollbar relative">
+    <div className="flex-1 overflow-y-auto p-2 sm:px-3 bg-background-light hide-scrollbar relative pt-20 lg:pt-3">
       {/* Mobile Toggle Buttons */}
       <div className="lg:hidden fixed top-4 left-4 z-30">
         <button

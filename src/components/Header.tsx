@@ -8,13 +8,13 @@ const Header: React.FC = () => {
     <div className="rounded-lg px-2 sm:px-4 py-4 sm:py-6 mt-2 sm:mt-3">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
         {/* Left Side - Animated Title */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 flex items-center gap-2 sm:gap-4">
+        <div className="col-span-1 flex items-center gap-2 sm:gap-4">
           <RotatingWords/>
         </div>
 
         {/* Right Side - Stats Grid */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col lg:flex-row items-start gap-2 sm:gap-4">
-          <div className="col-span-2 flex flex-col items-start gap-1 w-fit">
+        <div className="col-span-1  lg:col-span-3 flex flex-col lg:flex-row items-start gap-2 sm:gap-4">
+          <div className="flex flex-col items-start gap-1 w-fit">
             <div className="flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-br from-black via-black to-[#f26622]/50 rounded-lg w-full overflow-x-auto">
               {/* Active Users */}
               <div className="flex items-center gap-2 rounded-xl px-2 sm:px-3 py-3 sm:py-4 min-w-fit">
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                 <span className="text-light font-bold text-xl sm:text-2xl">Astra</span>
                 <span className="absolute right-0 top-1/2 h-8 w-[1.5px] bg-white/30 -translate-y-1/2"></span>
               </button>
-              <p className="w-full flex-1 text-white/40 text-sm">
+              <p className="w-full sm:max-w-[70%] flex-1 text-white/40 text-sm">
                 Generate image & video and chat with Industries best trained LLM
                 with exclusive partnership with
                 <img
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* $GPU Price with Chart */}
-          <div className="w-full h-full bg-gradient-to-br from-[#f26622]/50 via-black to-black rounded-lg flex flex-col items-start gap-1 px-3 py-4 relative overflow-hidden min-h-[160px] sm:min-h-[200px]">
+          <div className="w-full h-full bg-gradient-to-br from-[#f26622]/50 via-black to-black rounded-lg flex flex-col items-start gap-1 px-3 py-4 relative overflow-hidden min-h-[200px] sm:min-h-[200px]">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 border border-white/20 py-1 px-2 rounded-full">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -116,7 +116,9 @@ const Header: React.FC = () => {
               <span className="text-white text-xs font-bold">$GPU Price</span>
             </div>
             <div className="flex items-end gap-3">
-              <div className="text-2xl sm:text-3xl font-bold text-light">$0.43</div>
+              <div className="text-2xl sm:text-3xl font-bold text-light flex items-center gap-2">$0.43
+                <span className="w-2 h-2 bg-primary rounded-2xl opacity-50"></span>
+              </div>
               <span className="h-28 w-1 absolute bottom-2 left-[140px] border-r-4 -translate-y-full border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute bottom-0 left-12 -translate-y-full border-r-4 border-dotted border-[#F97316]/60"></span>
               <span className="h-16 w-1 absolute -bottom-3 left-[90px] -translate-y-full border-r-4 border-dotted border-[#F97316]/40"></span>
@@ -125,7 +127,7 @@ const Header: React.FC = () => {
                 <img
                   src="/graph.png"
                   alt="Price Chart"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain pointer-events-none"
                 />
               </div>
             </div>

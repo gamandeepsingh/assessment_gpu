@@ -32,7 +32,7 @@ const Feed: React.FC = () => {
         <img
           src={one}
           alt="Background"
-          className="w-full max-w-[300px] h-full object-fit opacity-10 pt-4"
+          className="w-full max-w-[300px] h-full object-fit opacity-10 pt-4 pointer-events-none"
         />
       </div>
       {/* Header */}
@@ -109,7 +109,95 @@ const Feed: React.FC = () => {
 
       {/* Feed Posts */}
       <div className="flex-1 overflow-y-auto px-1 relative z-10 hide-scrollbar">
-        {feedPosts.map((post) => (
+        {feedPosts.map((post) => {
+          // Render Boost Post
+          if (post.postType === 'boost' && post.boostData) {
+            return (
+              <div
+                key={post.id}
+                className="p-4 bg-transparent border-b border-gray-800 hover:bg-white/10 transition-colors"
+              >
+                <div className="flex flex-nowrap items-center gap-1 mb-3">
+                  <div className="text-light font-bold text-xs inline-block">Boost</div>
+                  <span className="text-white/50 text-xs inline-block"> recieved</span>
+                  <span className="text-primary font-bold text-xs inline-block">{post.boostData.votes} votes</span>
+                  <span className="text-white/50 text-xs inline-block">from</span>
+                  <span className="text-light font-bold text-xs inline-block">{post.boostData.fromUser}</span>
+                </div>
+                
+                {/* Reactions */}
+                <div className="flex items-center justify-between text-xs text-gray-400">
+                  <div className="flex items-center gap-4">
+                    <button className="flex items-center gap-1 text-primary transition-colors">
+                      <Heart className="w-4 h-4" fill="#f26622" />
+                      <span>{post.reactions.likes}</span>
+                    </button>
+                    <button className="flex items-center gap-1 hover:text-primary transition-colors">
+                      <MessageSquare className="w-4 h-4" fill="#fff" />
+                      <span>{post.reactions.comments}</span>
+                    </button>
+                    <div className="flex items-center gap-1">
+                      <img src={likeEmoji} alt="like" className="w-2 h-2" />
+                      <img src={luvEmoji} alt="love" className="w-2 h-2" />
+                      <img src={laughEmoji} alt="laugh" className="w-2 h-2" />
+                      <img src={shockEmoji} alt="surprised" className="w-2 h-2" />
+                      <img src={angryEmoji} alt="angry" className="w-2 h-2" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Eye className="w-4 h-4 text-light" />
+                    <span>{post.views}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Render GPU Purchase Post
+          if (post.postType === 'gpu_purchase' && post.gpuPurchaseData) {
+            return (
+              <div
+                key={post.id}
+                className="p-4 bg-transparent border-b border-gray-800 hover:bg-white/10 transition-colors"
+              >
+                <div className="flex items-center gap-1 mb-3 flex-wrap">
+                  <div className="text-light font-bold text-xs">{post.username}</div>
+                  <span className="text-white/50 text-xs">bought at</span>
+                  <span className="text-primary font-bold text-xs">{post.gpuPurchaseData.pricePerGpu}</span>
+                  <span className="text-white/50 text-xs">-</span>
+                  <span className="text-white/50 text-xs">{post.timestamp}</span>
+                </div>
+                
+                {/* Reactions */}
+                <div className="flex items-center justify-between text-xs text-gray-400">
+                  <div className="flex items-center gap-4">
+                    <button className="flex items-center gap-1 text-primary transition-colors">
+                      <Heart className="w-4 h-4" fill="#f26622" />
+                      <span>{post.reactions.likes}</span>
+                    </button>
+                    <button className="flex items-center gap-1 hover:text-primary transition-colors">
+                      <MessageSquare className="w-4 h-4" fill="#fff" />
+                      <span>{post.reactions.comments}</span>
+                    </button>
+                    <div className="flex items-center gap-1">
+                      <img src={likeEmoji} alt="like" className="w-2 h-2" />
+                      <img src={luvEmoji} alt="love" className="w-2 h-2" />
+                      <img src={laughEmoji} alt="laugh" className="w-2 h-2" />
+                      <img src={shockEmoji} alt="surprised" className="w-2 h-2" />
+                      <img src={angryEmoji} alt="angry" className="w-2 h-2" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Eye className="w-4 h-4 text-light" />
+                    <span>{post.views}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Render Regular Post
+          return (
           <div
             key={post.id}
             className="p-4 bg-transparent border-b border-gray-800 hover:bg-white/10 transition-colors"
@@ -198,7 +286,8 @@ const Feed: React.FC = () => {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
       </div>
     </>

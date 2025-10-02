@@ -10,18 +10,24 @@ export const mockFeedPosts: FeedPost[] = [
     content: 'Just conquered algorithms & data structures! 🎯\nTime for a breather. Suggestions for a binge-worthy show? 🍿',
     hashtags: ['#StudyBreak', '#NetflixTime'],
     reactions: { likes: 40, comments: 300 },
-    views: '101K'
+    views: '101K',
+    postType: 'regular'
   },
   {
     id: '2',
-    username: 'Flaco Moon',
-    role: 'ML Engineer',
+    username: 'Boost',
+    role: '',
     timestamp: '3h ago',
-    content: 'received 178 votes from',
-    profileImage:"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww",
+    content: '',
+    profileImage:"",
     hashtags: [],
-    reactions: { likes: 13, comments: 30 },
-    views: '401K'
+    reactions: { likes: 13, comments: 203 },
+    views: '401K',
+    postType: 'boost',
+    boostData: {
+      votes: 176,
+      fromUser: 'Flaco Moon'
+    }
   },
   {
     id: '3',
@@ -33,7 +39,24 @@ export const mockFeedPosts: FeedPost[] = [
     hashtags: [],
         image:"https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg",
     reactions: { likes: 6, comments: 140 },
-    views: '31K'
+    views: '31K',
+    postType: 'regular'
+  },
+  {
+    id: '3.5',
+    username: 'GPU SS 55GPU',
+    role: '',
+    timestamp: '6h ago',
+    content: '',
+    profileImage:"",
+    hashtags: [],
+    reactions: { likes: 13, comments: 203 },
+    views: '401K',
+    postType: 'gpu_purchase',
+    gpuPurchaseData: {
+      gpuAmount: 55,
+      pricePerGpu: '$317'
+    }
   },
   {
     id: '4',
@@ -44,7 +67,8 @@ export const mockFeedPosts: FeedPost[] = [
     content: 'Just conquered algorithms & data structures! 🎯\nTime for a breather. Suggestions for a binge-worthy show? 🍿',
     hashtags: ['#StudyBreak', '#NetflixTime'],
     reactions: { likes: 63, comments: 300 },
-    views: '401K'
+    views: '401K',
+    postType: 'regular'
   }
 ];
 

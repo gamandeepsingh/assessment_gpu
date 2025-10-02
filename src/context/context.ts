@@ -14,6 +14,15 @@ export interface FeedPost {
     comments: number;
   };
   views: string;
+  postType?: 'regular' | 'boost' | 'gpu_purchase';
+  boostData?: {
+    votes: number;
+    fromUser: string;
+  };
+  gpuPurchaseData?: {
+    gpuAmount: number;
+    pricePerGpu: string;
+  };
 }
 
 export interface GpuListing {
