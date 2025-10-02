@@ -15,19 +15,19 @@ const StatsCards: React.FC = () => {
     <div className="bg-black rounded-xl p-2">
       <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto hide-scrollbar">
         {stats.map((stat, index) => (
-          <div key={stat.country} className="rounded-lg p-2 sm:p-4 relative  min-w-[200px] md:min-w-fit">
+          <div key={stat.country} className="flex-1 rounded-lg p-2 sm:p-4 relative  min-w-[200px] md:min-w-fit">
             <div
               className={`mb-1 font-bold sm:whitespace-nowrap ${
-                index === 0 ? "text-light text-sm" : "text-white/60 text-xs"
+                index === 0 ? "text-light text-xs" : "text-white/60 text-[10px]"
               }`}
             >
               {stat.country}
             </div>
-            <div className="text-xl font-bold text-light whitespace-nowrap">
+            <div className="text-base font-bold text-light whitespace-nowrap">
               {stat.gpus === 0 ? (
                 <span className="flex flex-wrap sm:flex-nowrap items-center gap-1">
                   4,254{" "}
-                  <span className="text-primary text-xs border border-white/20 p-1 rounded-2xl flex items-center w-fit">
+                  <span className="text-primary text-[10px] border border-white/20 p-1 rounded-2xl flex items-center w-fit">
                     +99.9% uptime{" "}
                     <MoveRight className="text-primary -rotate-45" size={12} />
                   </span>
